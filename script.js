@@ -38,7 +38,7 @@ function validarCampos(event) {
     formulario.submit();
 }
 
-curp.addEventListener("input", (event) => {
+curp.addEventListener("blur", (event) => {
     const cadena = event.target.value;
     const [primeraLetra, segundaLetra, tercerLetra, cuartaLetra] = cadena;
 
@@ -88,10 +88,10 @@ let alertBox = null;
 
 function showAlert(message) {
     if (alertBox) {
-        // If alert box already exists, update message
+        // If an alert box already exists, update the message
         alertBox.textContent = message;
     } else {
-        // Create new alert box
+        // Create a new alert box
         alertBox = document.createElement("div");
         alertBox.classList.add("alert", "bg-danger", "text-light", "mt-5", "w-50", "mx-auto");
         alertBox.textContent = message;
@@ -100,6 +100,9 @@ function showAlert(message) {
 
 }
 
-formulario.addEventListener("submit", validarCampos);
 
+
+
+// Event listener for form submission
+formulario.addEventListener("submit", validarCampos);
 
