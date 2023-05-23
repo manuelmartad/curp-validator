@@ -91,7 +91,7 @@ curp.addEventListener("input", (event) => {
         return;
     }
     else if (!esSexo) {
-        showAlert("El onceavo caracter de tu CURP debe ser 'H' o 'M'.", "red");
+        showAlert("El onceavo caracter de tu CURP debe ser 'H' para hombre o 'M' para mujer.", "red");
         return;
     }
     else if (!esEstado) {
