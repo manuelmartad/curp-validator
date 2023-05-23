@@ -98,12 +98,6 @@ function showAlert(message) {
         document.querySelector("h1").before(alertBox);
     }
 
-    // setTimeout(() => {
-    //     if (alertBox) {
-    //         alertBox.remove();
-    //         alertBox = null;
-    //     }
-    // }, 3000);
 }
 
 formulario.addEventListener("submit", validarCampos);
