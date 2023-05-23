@@ -24,6 +24,10 @@ h1 {
     text-transform: uppercase;
 }
 
+.alerta {
+    width: 95%;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 1.5rem;
