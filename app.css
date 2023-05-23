@@ -33,9 +33,13 @@ h1 {
     }
 
     #formulario {
-        width: 80%;
+        width: 95%;
         position: static;
         transform: none;
         margin: 2rem auto;
+    }
+
+    .alerta {
+        width: 95%;
     }
 }

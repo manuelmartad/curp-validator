@@ -93,7 +93,7 @@ function showAlert(message) {
     } else {
         // Create a new alert box
         alertBox = document.createElement("div");
-        alertBox.classList.add("alert", "bg-danger", "text-light", "mt-5", "w-50", "mx-auto");
+        alertBox.classList.add("alert", "bg-danger", "text-light", "mt-5", "mx-auto", "alerta");
         alertBox.textContent = message;
         document.querySelector("h1").before(alertBox);
     }
