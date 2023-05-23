@@ -1,0 +1,41 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+    width: 40%;
+}
+
+#formulario input {
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        position: static;
+        transform: none;
+    }
+
+    #formulario {
+        width: 80%;
+        position: static;
+        transform: none;
+        margin: 2rem auto;
+    }
+}
