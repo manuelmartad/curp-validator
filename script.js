@@ -87,6 +87,7 @@ curp.addEventListener("input", (event) => {
         { palabra: "CULO", reemplazo: "CXLO" },
         { palabra: "FALO", reemplazo: "FXLO" },
         { palabra: "FETO", reemplazo: "FXTO" },
+        { palabra: "FUCK", reemplazo: "FXCK" },
         { palabra: "GETA", reemplazo: "GXTA" },
         { palabra: "GUEI", reemplazo: "GXEI" },
         { palabra: "GUEY", reemplazo: "GXEY" },
@@ -187,7 +188,7 @@ let alertBox = null;
 
 function showAlert(message, bgColor) {
     if (alertBox) {
-        // If an alert box already exists, update the message
+        // If an alert box already exists, update message and alert color
         alertBox.textContent = message;
         alertBox.style.backgroundColor = bgColor;
 
