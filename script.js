@@ -66,6 +66,58 @@ curp.addEventListener("input", (event) => {
     const consonantePrimerNombre = cadena.charAt(15);
     const esConsonantePrimerNombre = /^[bcdfghjklmnpqrstvwxyz]/i.test(consonantePrimerNombre);
 
+    const palabrasInconvenientes = [
+        { palabra: "BACA", reemplazo: "BXCA" },
+        { palabra: "BAKA", reemplazo: "BXKA" },
+        { palabra: "BUEI", reemplazo: "BXEI" },
+        { palabra: "BUEY", reemplazo: "BXEY" },
+        { palabra: "CACA", reemplazo: "CXCA" },
+        { palabra: "CACO", reemplazo: "CXCO" },
+        { palabra: "CAGA", reemplazo: "CXGA" },
+        { palabra: "CAGO", reemplazo: "CXGO" },
+        { palabra: "CAKA", reemplazo: "CXKA" },
+        { palabra: "CAKO", reemplazo: "CXKO" },
+        { palabra: "COGE", reemplazo: "CXGE" },
+        { palabra: "COGI", reemplazo: "CXGI" },
+        { palabra: "COJA", reemplazo: "CXJA" },
+        { palabra: "COJE", reemplazo: "CXJE" },
+        { palabra: "COJI", reemplazo: "CXJI" },
+        { palabra: "COJO", reemplazo: "CXJO" },
+        { palabra: "COLA", reemplazo: "CXLA" },
+        { palabra: "CULO", reemplazo: "CXLO" },
+        { palabra: "FALO", reemplazo: "FXLO" },
+        { palabra: "FETO", reemplazo: "FXTO" },
+        { palabra: "GETA", reemplazo: "GXTA" },
+        { palabra: "GUEI", reemplazo: "GXEI" },
+        { palabra: "GUEY", reemplazo: "GXEY" },
+        { palabra: "JETA", reemplazo: "JXTA" },
+        { palabra: "JOTO", reemplazo: "JXTO" },
+        { palabra: "LOCO", reemplazo: "LXCO" },
+        { palabra: "LOKA", reemplazo: "LXKA" },
+        { palabra: "LOKO", reemplazo: "LXKO" },
+        { palabra: "MAME", reemplazo: "MXME" },
+        { palabra: "MAMO", reemplazo: "MXMO" },
+        { palabra: "MEAR", reemplazo: "MXAR" },
+        { palabra: "MEAS", reemplazo: "MXAS" },
+        { palabra: "MEON", reemplazo: "MXON" },
+        { palabra: "MIAR", reemplazo: "MXAR" },
+        { palabra: "MION", reemplazo: "MXON" },
+        { palabra: "MOCO", reemplazo: "MXCO" },
+        { palabra: "MOKO", reemplazo: "MXKO" },
+        { palabra: "MULA", reemplazo: "MXLA" },
+        { palabra: "MULO", reemplazo: "MXLO" },
+        { palabra: "NACA", reemplazo: "NXCA" },
+        { palabra: "NACO", reemplazo: "NXCO" },
+        { palabra: "PEDA", reemplazo: "PXDA" },
+        { palabra: "PEDO", reemplazo: "PXDO" },
+        { palabra: "PENE", reemplazo: "PXNE" },
+        { palabra: "PIPI", reemplazo: "PXPI" },
+        { palabra: "PITO", reemplazo: "PXTO" },
+        { palabra: "POPO", reemplazo: "PXPO" },
+        { palabra: "PUTA", reemplazo: "PXTA" },
+        { palabra: "PUTO", reemplazo: "PXTO" }
+    ];
+
     if (!esLetra) {
         showAlert("El primer caracter de tu CURP debe ser la primer letra de tu primer apellido.", "red");
         return;
@@ -115,7 +167,17 @@ curp.addEventListener("input", (event) => {
         return;
     }
     else {
-        showAlert("El formato de tu CURP es valido", "green")
+
+        // Apply replacement
+        let modifiedCurp = cadena.toUpperCase();
+        palabrasInconvenientes.forEach(item => {
+            modifiedCurp = modifiedCurp.replace(item.palabra, item.reemplazo);
+        });
+
+        console.log(cadena.toUpperCase());
+        console.log(modifiedCurp);
+
+        showAlert("El formato de tu CURP es valido: " + modifiedCurp, "green")
         btnValidar.removeAttribute("disabled")
     }
 });
